@@ -17,7 +17,7 @@ const submit = async () => {
 <template>
 <h3>글쓰기</h3>
 <div><input type="text" placeholder="제목" v-model="state.board.title"></div>
-<div><textarea placeholder="내용" v-model="state.board.contents"></textarea></div>
+<div><textarea placeholder="제목" v-model="state.board.contents"></textarea></div>
 <div><button @click="submit">등록</button></div>
 </template>
 

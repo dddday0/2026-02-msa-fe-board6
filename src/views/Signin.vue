@@ -20,8 +20,9 @@ const signIn = async () => {
     const result = await userService.signIn( state.signin );
     console.log('result: ', result);
 
-    authentication.signIn(result, resultData);
+    authentication.signIn(result.resultData);
 }
+
 </script>
 
 <template>

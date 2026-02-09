@@ -13,6 +13,11 @@ class UserService {
         return res.data;
     }
 
+    async signOut(){
+        const res = await axios.post(`${this.#url}/signout`);
+        return res.data;
+    }
+
 
 }
 
