@@ -2,6 +2,9 @@
 import { reactive } from 'vue';
 import userService from '@/services/userService';
 import { useAuthenticationStore } from '@/stores/authentication';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const authentication = useAuthenticationStore();
 
@@ -20,8 +23,19 @@ const signIn = async () => {
     const result = await userService.signIn( state.signin );
     console.log('result: ', result);
 
+    if(result.resultData === null ) { // 로그인 실패
+        alert(result.resultMessage);
+        return;
+    }
+
+
     authentication.signIn(result.resultData);
+    router.push('/');
+    
 }
+
+
+
 
 </script>
 
